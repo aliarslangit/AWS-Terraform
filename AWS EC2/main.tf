@@ -14,7 +14,7 @@ resource "aws_subnet" "my_subnet" {
   tags = {
     Name = "tf-example"
   }
-
+}
 
 resource "aws_network_interface" "demo" {
   subnet_id   = aws_subnet.my_subnet.id
@@ -27,9 +27,12 @@ resource "aws_network_interface" "demo" {
 
 resource "aws_instance" "demo" {
   ami           = "ami-005e54dee72cc1d00" # us-west-2
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
 
   network_interface {
     network_interface_id = aws_network_interface.demo.id
     device_index         = 0
   }
+
+ 
+}
