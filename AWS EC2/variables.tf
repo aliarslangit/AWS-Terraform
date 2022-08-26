@@ -7,3 +7,7 @@ variable "instance_type" {
   type = string
   default = "t3.micro"
 }
+variable "private_ips" {
+  type = string
+  default = [""]
+}
